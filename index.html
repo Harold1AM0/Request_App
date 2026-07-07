@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel - Sistema Distribuido</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Sistema Distribuido</h1>
+        <p>Panel de administración de Microservicios</p>
+
+    </header>
+
+    <!-- ================= PRODUCTOS ================= -->
+
+    <section class="card">
+
+        <h2>Productos</h2>
+
+        <button onclick="listarProductos()">
+            Actualizar Productos
+        </button>
+
+        <table id="tablaProductos">
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <!-- ================= NUEVO PRODUCTO ================= -->
+
+    <section class="card">
+
+        <h2>Nuevo Producto</h2>
+
+        <div class="formulario">
+
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Nombre">
+
+            <input
+                type="number"
+                id="precio"
+                placeholder="Precio">
+
+            <input
+                type="number"
+                id="stock"
+                placeholder="Stock">
+
+            <button onclick="guardarProducto()">
+
+                Guardar Producto
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ================= ACTUALIZAR PRODUCTO ================= -->
+
+    <section class="card">
+
+        <h2>Actualizar Producto</h2>
+
+        <div class="formulario">
+
+            <input
+                type="number"
+                id="editarId"
+                placeholder="ID">
+
+            <input
+                type="text"
+                id="editarNombre"
+                placeholder="Nombre">
+
+            <input
+                type="number"
+                id="editarPrecio"
+                placeholder="Precio">
+
+            <input
+                type="number"
+                id="editarStock"
+                placeholder="Stock">
+
+            <button onclick="actualizarProducto()">
+
+                Actualizar
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ================= REGISTRAR VENTA ================= -->
+
+    <section class="card">
+
+        <h2>Registrar Venta</h2>
+
+        <div class="formulario">
+
+            <input
+                type="number"
+                id="productoId"
+                placeholder="Producto ID">
+
+            <input
+                type="number"
+                id="cantidad"
+                placeholder="Cantidad">
+
+            <button onclick="registrarVenta()">
+
+                Registrar Venta
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ================= VENTAS ================= -->
+
+    <section class="card">
+
+        <h2>Ventas</h2>
+
+        <button onclick="listarVentas()">
+
+            Actualizar Ventas
+
+        </button>
+
+        <table id="tablaVentas">
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Producto ID</th>
+                    <th>Cantidad</th>
+                    <th>Fecha</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <!-- ================= POD ================= -->
+
+    <section class="card">
+
+        <h2>Instancia (Pod)</h2>
+
+        <button onclick="consultarInstancia()">
+
+            Consultar Instancia
+
+        </button>
+
+        <button onclick="limpiarConsola()">
+            Limpiar Consola
+        </button>
+        <textarea
+            id="consola"
+            readonly
+            rows="12"
+            placeholder="Aquí aparecerán las respuestas de /productos/instancia"></textarea>
+
+    </section>
+
+    <!-- ================= JS ================= -->
+
+    <script src="js/api.js"></script>
+
+    <script src="js/productos.js"></script>
+
+    <script src="js/ventas.js"></script>
+
+    <script src="js/instancia.js"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
