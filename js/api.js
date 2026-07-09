@@ -1,5 +1,5 @@
-const INVENTARIO_URL = "https://18.223.2.144.sslip.io/productos";
-const REPORTE_URL = "https://18.223.2.144.sslip.io/ventas";
+const INVENTARIO_URL = "https://18-223-2-144.sslip.io/productos";
+const REPORTE_URL = "https://18-223-2-144.sslip.io/ventas";
 
 async function get(url) {
 
