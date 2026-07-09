@@ -54,10 +54,12 @@ async function registrarVenta() {
 
     try {
 
-        // Corregido: antes apuntaba a INVENTARIO_URL + "/ventas", que es el
-        // microservicio equivocado (el de productos, puerto 30080).
-        // Ahora usa REPORTE_URL, el microservicio de ventas (puerto 30081).
-        const response = await fetch(REPORTE_URL, {
+        // Debe apuntar a INVENTARIO_URL + "/ventas" (ProductoController.registrarVenta),
+        // NO a REPORTE_URL directo. El endpoint de inventario es el que descuenta
+        // el stock, asigna la fecha y luego notifica al reporte-service.
+        // Pegarle a REPORTE_URL directo (VentaController.guardarVenta) guarda la
+        // venta "en crudo" sin tocar el stock y sin fecha si no viene en el body.
+        const response = await fetch(INVENTARIO_URL + "/ventas", {
 
             method: "POST",
 
