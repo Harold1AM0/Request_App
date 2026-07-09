@@ -20,9 +20,6 @@ async function get(url) {
         console.error("GET:", url);
         console.error(error);
 
-        // Nota: se quitó el alert() aquí para no bombardear al usuario
-        // con popups cada 15 segundos si el backend está caído.
-
         return null;
 
     }
